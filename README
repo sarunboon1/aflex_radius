@@ -1,5 +1,5 @@
 when CLIENT_DATA {
-  # read value of attribute id 40
+  # read value of attribute id 40 then store value in acct_code variable
   binary scan [RADIUS::avp 40] I1 acct_code
   set all_avp [RADIUS::avp]
   set result_vsa ""
@@ -16,16 +16,16 @@ when CLIENT_DATA {
 	   if { [lindex $all_avp $i 0] == 26 } {
 			#binary scan avp 26 in position 2(value) and move forward 4 byte then read value with binary scan 'c' format 1 byte and put in variable 'vsa'.
 			#binary scan 'c' format is data will turned into count 8-bit signed integers.
-                        binary scan [lindex $all_avp $i 2] x4c1 vsa		
+            binary scan [lindex $all_avp $i 2] x4c1 vsa		
 			
-                        #convert data from signed integers to unsigned integers.
+            #convert data from signed integers to unsigned integers.
 			set usign_vsa [expr ( $vsa + 0x100 ) % 0x100]
 			
 			#binary scan format 'x' is move cursor forward || ex. 'x6' is move cursor forward 6 byte
 	
-			#The switch command matches its string argument against each of the pattern arguments in order and use instead if - elseif...elseif.....elseif.
+			#The switch command matches its string argument against each of the pattern arguments in order and use instead of if - elseif...elseif.....elseif.
 			switch [lindex $usign_vsa] {
-			#check vsa type = 1, read data at potition 2 (value) and move cursor forward 6 byte then read data as signed integer 8-bits 1 byte 4 times.
+			#check vsa type = 1, read data at potition 2 (value) and move cursor forward 6 byte then read data as signed integer 8-bits (1 byte) 4 times to get IPv4.
 			1 {
 				binary scan [lindex $all_avp $i 2] x6c1c1c1c1 oct4 oct3 oct2 oct1
 				append result_vsa "Client_DNS_Primary::$oct4.$oct3.$oct2.$oct1 "
