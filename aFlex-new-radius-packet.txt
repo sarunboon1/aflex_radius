@@ -1,9 +1,10 @@
+#sarun
 when CLIENT_DATA {
   # read value of attribute id 40
   binary scan [RADIUS::avp 40] I1 acct_code
   set all_avp [RADIUS::avp]
   set result_vsa ""
-  if {$acct_code == 1} { 
+  if {$acct_code == 1} {
 	set Status_Type "Start"
   } else {
 	set Status_Type "Stop"
@@ -95,31 +96,4 @@ when CLIENT_DATA {
   log "$result_vsa"
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Testttttt
