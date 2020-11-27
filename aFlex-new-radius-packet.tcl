@@ -1,7 +1,7 @@
 when CLIENT_DATA {
   # read value of attribute id 40
   binary scan [RADIUS::avp 40] I1 acct_code
-  set all_avp [RADIUS::avp]
+  set allavp [RADIUS::avp]
   set result_vsa ""
   # Check Status type 'start' or 'stop'
   if {$acct_code == 1} { 
@@ -10,12 +10,14 @@ when CLIENT_DATA {
 	set Status_Type "Stop"
   }
   append result_vsa "$Status_Type "
+
+  set all_avp [lsort -dictionary $allavp ]
+
    for {set i 0} { $i < [llength $all_avp] } { incr i } {
 	   if { [lindex $all_avp $i 0] == 26 } {
             binary scan [lindex $all_avp $i 2] x4c1 vsa		
             set usign_vsa [expr ( $vsa + 0x100 ) % 0x100]
-			set usign_vsa_sort [lsort -integer $usign_vsa]	
-			switch [lindex $usign_vsa_sort] {
+			switch [lindex $usign_vsa ] {
 			1 {
 				binary scan [lindex $all_avp $i 2] x6c1c1c1c1 oct4 oct3 oct2 oct1
 				append result_vsa "Client_DNS_Primary::$oct4.$oct3.$oct2.$oct1 "
@@ -54,7 +56,7 @@ when CLIENT_DATA {
                                   if {$vsa98_value == 2} {
                                   set vsa98 "SmartEdge-800"
                                   } else {
-			              append result_vsa "Medium_Type::$vsa98_value "
+			              append result_vsa "Platform_Type::$vsa98_value "
                                       }
 				append result_vsa "Platform_Type::$vsa98 "
 			}
@@ -147,6 +149,10 @@ when CLIENT_DATA {
 			27 {
 				 binary scan [lindex $all_avp $i 2] A* sess_timeout
 			 append result_vsa "Session_Timeout::$sess_timeout "
+			   }
+            28 {
+				 binary scan [lindex $all_avp $i 2] A* idel_timeout
+			 append result_vsa "Idel_Timeout::$idel_timeout "
 			   }
 			31 {
 			 binary scan [lindex $all_avp $i 2] A* cs_id
