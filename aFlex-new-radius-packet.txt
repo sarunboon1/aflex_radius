@@ -95,17 +95,6 @@ when CLIENT_DATA {
   log "$result_vsa"
 }
 
-Se
-
-
-
-
-
-07-17-2019	14:57:45	Local0.Info	10.2.4.224	 new_radius_acct:test-acct01@hinet.sc bfa09a29b658b4e53f1fa5f6adcede20 Start 0203FFFF68000058-5CB002B4 2 1 SE800-LAB 50593792 50593792 5 3/4 pppoe 88 11 88-51-fb-6c-28-3a SE800-LAB#3/4#0#0#Agent-Circuit-Id Not Present 2 12.1.1.11p7 1 std-bycat 8.8.8.8 8.8.4.4 192.168.100.79 255.255.255.255 nd=nd-profile-1 1 1=2001:4860:4860::8888 2001:2002:2003:014e:0000:0000:0000:0000/64 54deb126c3bec331 default_qos_metering_policy default_qos_policing_policy aggregate:0 600 4354585f34392d514f535f3934233436303739 meter-class-rate DATA rate-absolute 1024 police-class-rate DATA rate-absolute 1024 police-class-burst DATA 512000 meter-class-burst DATA 512000 86400 600 Fri Apr 12 04:15:01 IST 2019 Hinet_A-Pod-Prm-d10Mu2M-Unlimit-Unlimit 0 192.168.1.182
-
-
-
-
 
 
 
