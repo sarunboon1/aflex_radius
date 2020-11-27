@@ -34,10 +34,10 @@ when CLIENT_DATA {
 				binary scan [lindex $all_avp $i 2] x6I1 vsa38_value
                                   if {$vsa38_value == 11} {
                                   set vsa38 "DSL"
+				      append result_vsa "Medium_Type::$vsa38 "
                                   } else {
 			              append result_vsa "Medium_Type::$vsa38_value "
                                       }
-				append result_vsa "Medium_Type::$vsa38 "
 			}
 			62 {
 				binary scan [lindex $all_avp $i 2] x6I1 vsa62_value
@@ -55,10 +55,10 @@ when CLIENT_DATA {
 				binary scan [lindex $all_avp $i 2] x6I1 vsa98_value
                                   if {$vsa98_value == 2} {
                                   set vsa98 "SmartEdge-800"
+				      append result_vsa "Platform_Type::$vsa98 "
                                   } else {
 			              append result_vsa "Platform_Type::$vsa98_value "
                                       }
-				append result_vsa "Platform_Type::$vsa98 "
 			}
 			112 {
 				binary scan [lindex $all_avp $i 2] x6a* vsa112_value
@@ -99,46 +99,46 @@ when CLIENT_DATA {
 		 
 	   } else {
 			switch [lindex $all_avp $i 0] {
-            1 {
+                          1 {
 				 binary scan [lindex $all_avp $i 2] A* username
 			 append result_vsa "User::$username "
 			   }
-            2 {
+                          2 {
 				 binary scan [lindex $all_avp $i 2] H* password
 			 append result_vsa "Password::$password "
 			   }
-            4 {
+                          4 {
 				 binary scan [lindex $all_avp $i 2] A* nas_ip
 			 append result_vsa "NAS_IP::$nas_ip "
 			   }
-            5 {
+                          5 {
 				 binary scan [lindex $all_avp $i 2] A* nas_port
 			 append result_vsa "NAS_Port::$nas_port "
 			   }
 
-            6 {
+                          6 {
 				 binary scan [lindex $all_avp $i 2] A* service_type
                                   if {$service_type == 2} {
                                   set serv_type "Frame"
+			              append result_vsa "Service_Type::$serv_type "
                                   } else {
 			              append result_vsa "Service_Type::$service_type "
                                       }
-			 append result_vsa "Service_Type::$serv_type "
 			   }
-            7 {
+                          7 {
 				 binary scan [lindex $all_avp $i 2] A* frame_proto
                                   if {$frame_proto == 1} {
                                   set frame_pt "PPP"
+			              append result_vsa "Framed_Protocol::$frame_pt "
                                   } else {
 			              append result_vsa "Framed_Protocol::$frame_proto "
                                       }
-			 append result_vsa "Framed_Protocol::$frame_pt "
 			   }
-            8 {
+                          8 {
 				 binary scan [lindex $all_avp $i 2] A* frame_ip
 			 append result_vsa "IP_Address::$frame_ip "
 			   }
-            9 {
+                          9 {
 				 binary scan [lindex $all_avp $i 2] A* frame_netmask
 			 append result_vsa "Netmask::$frame_netmask "
 			   }
@@ -150,7 +150,7 @@ when CLIENT_DATA {
 				 binary scan [lindex $all_avp $i 2] A* sess_timeout
 			 append result_vsa "Session_Timeout::$sess_timeout "
 			   }
-            28 {
+                        28 {
 				 binary scan [lindex $all_avp $i 2] A* idel_timeout
 			 append result_vsa "Idel_Timeout::$idel_timeout "
 			   }
@@ -178,10 +178,10 @@ when CLIENT_DATA {
 				 binary scan [lindex $all_avp $i 2] I1 acct_authentic
                                   if {$acct_authentic == 1} {
                                   set acc_authen "Radius"
+                                      append result_vsa "Acct_Authentic::$acc_authen "
                                   } else {
 			              append result_vsa "Acct_Authentic::$acct_authentic "
                                       }
-                                  append result_vsa "Acct_Authentic::$acc_authen "
 			   }
 			55 {
 				 binary scan [lindex $all_avp $i 2] I* Event_Timestamp
@@ -192,10 +192,10 @@ when CLIENT_DATA {
 				 binary scan [lindex $all_avp $i 2] A* nas_port_ty
                                   if {$nas_port_ty == 5} {
                                   set nas_port_type "Virtual"
+                                      append result_vsa "NAS_Port_Type::$nas_port_type "
                                   } else {
 			              append result_vsa "NAS_Port_Type::$nas_port_ty "
                                       }
-                                  append result_vsa "NAS_Port_Type::$nas_port_type "
 			   }
 			85 {
 				 binary scan [lindex $all_avp $i 2] I1 Acct_Interim_Interval
