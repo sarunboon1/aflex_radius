@@ -1,3 +1,4 @@
+#sarun
 when CLIENT_DATA {
   # read value of attribute id 40
   binary scan [RADIUS::avp 40] I1 acct_code
