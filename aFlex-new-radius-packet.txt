@@ -95,5 +95,3 @@ when CLIENT_DATA {
 	}
   log "$result_vsa"
 }
-
-### Testttttt
