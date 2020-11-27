@@ -138,7 +138,7 @@ when CLIENT_DATA {
 				 binary scan [lindex $all_avp $i 2] A* frame_ip
 			 append result_vsa "IP_Address::$frame_ip "
 			   }
-             9 {
+            9 {
 				 binary scan [lindex $all_avp $i 2] A* frame_netmask
 			 append result_vsa "Netmask::$frame_netmask "
 			   }
@@ -150,7 +150,7 @@ when CLIENT_DATA {
 				 binary scan [lindex $all_avp $i 2] A* sess_timeout
 			 append result_vsa "Session_Timeout::$sess_timeout "
 			   }
-             28 {
+            28 {
 				 binary scan [lindex $all_avp $i 2] A* idel_timeout
 			 append result_vsa "Idel_Timeout::$idel_timeout "
 			   }
