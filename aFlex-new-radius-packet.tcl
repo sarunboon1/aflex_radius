@@ -14,7 +14,7 @@ when CLIENT_DATA {
 	   if { [lindex $all_avp $i 0] == 26 } {
             binary scan [lindex $all_avp $i 2] x4c1 vsa		
             set usign_vsa [expr ( $vsa + 0x100 ) % 0x100]
-			      set usign_vsa_sort [lsort -integer $usign_vsa]	
+			set usign_vsa_sort [lsort -integer $usign_vsa]	
 			switch [lindex $usign_vsa_sort] {
 			1 {
 				binary scan [lindex $all_avp $i 2] x6c1c1c1c1 oct4 oct3 oct2 oct1
