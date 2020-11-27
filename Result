@@ -1,0 +1,40 @@
+Start 
+User::test-acct01@hinet.sc 
+Password::bfa09a29b658b4e53f1fa5f6adcede20  
+Acct_Session_ID:0203FFFF68000058-5CB002B4 
+Service_Type::Frame Framed_
+Protocol::PPP 
+NAS_Identifier::SE800-LAB 
+NAS_Port::50593792 
+NAS_real_port::50593792 
+NAS_Port_Type::Virtual 
+NAS_Port_ID::3/4 pppoe 88 
+Medium_Type::DSL MAC_Addr::88-51-fb-6c-28-3a 
+Calling_Staion_ID::SE800-LAB#3/4#0#0#Agent-Circuit-Id Not Present 
+Platform_Type::SmartEdge-800 OS_Version::12.1.1.11p7 
+Acct_Authentic::Radius 
+Context_Name::std-bycat 
+Client_DNS_Primary::8.8.8.8 
+Client_DNS_Second::8.8.4.4 
+IP_Address::192.168.100.79 
+Netmask::255.255.255.255 
+RB_IPv6_Option::nd=nd-profile-1 
+Delegated_Max_Prefix::1 
+RB_IPv6_DNS::1=2001:4860:4860::8888 
+IPv6::2001:2002:2003:014e:0000:0000:0000:0000/64 
+Interface_ID::54deb126c3bec331 
+Qos_Metering_Profile_Name::default_qos_metering_policy 
+Qos_Policing_Profile_Name::default_qos_policing_policy 
+Session_Traffic_Limit::aggregate:0 
+Acct_Interim_Interval::600 
+Class::4354585f34392d514f535f3934233436303739 
+Dynamic_QoS_Param::meter-class-rate DATA rate-absolute 1024 
+Dynamic_QoS_Param::police-class-rate DATA rate-absolute 1024 
+Dynamic_QoS_Param::police-class-burst DATA 512000 
+Dynamic_QoS_Param::meter-class-burst DATA 512000 
+Session_Timeout::86400 
+Idel_Timeout::600 
+Time::Apr 12, 2019 04:15:01 
+Service_Name::Hinet_A-Pod-Prm-d10Mu2M-Unlimit-Unlimit 
+Delay_Time::0 
+NAS_IP::192.168.1.182 
