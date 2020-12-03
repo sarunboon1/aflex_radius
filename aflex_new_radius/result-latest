@@ -1,0 +1,42 @@
+	Start | 
+  test-acct01@hinet.sc | 
+  bfa09a29b658b4e53f1fa5f6adcede20 | 
+  192.168.1.182 | 
+  50593792 | 
+  Frame | 
+  PPP | 
+  192.168.100.79 | 
+  255.255.255.255 | 
+  4354585f34392d514f535f3934233436303739 | 
+  8.8.8.8 | 
+  8.8.4.4 | 
+  DSL | 
+  50593792 | 
+  SmartEdge-800 | 
+  1 | 
+  std-bycat | 
+  12.1.1.11p7 | 
+  aggregate:0 | 
+  nd=nd-profile-1 | 
+  88-51-fb-6c-28-3a | 
+  1=2001:4860:4860::8888 | 
+  default_qos_policing_policy | 
+  default_qos_metering_policy | 
+  meter-class-burst DATA 512000 | 
+  police-class-burst DATA 512000 | 
+  Hinet_A-Pod-Prm-d10Mu2M-Unlimit-Unlimit | 
+  meter-class-rate DATA rate-absolute 1024 | 
+  police-class-rate DATA rate-absolute 1024 | 
+  86400 | 
+  600 | 
+  SE800-LAB#3/4#0#0#Agent-Circuit-Id Not Present | 
+  SE800-LAB | 
+  0 | 
+  0203FFFF68000058-5CB002B4 | 
+  Radius | 
+  Apr 12, 2019 04:15:01 | 
+  Virtual | 
+  600 | 
+  3/4 pppoe 88 | 
+  54deb126c3bec331 | 
+  2001:2002:2003:014e:0000:0000:0000:0000/64 |
