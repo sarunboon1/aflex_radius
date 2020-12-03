@@ -1,0 +1,12 @@
+#change mac
+tcprewrite --enet-dmac=00:0c:29:69:54:43 --enet-smac=00:0c:29:21:fa:bd --infile=new_radius.pcap --outfile=cmac.pcap
+
+#create cachefile
+tcpprep --auto=bridge --pcap=cmac.pcap --cachefile=cmac.pcap.cache
+
+#change IP
+tcprewrite --endpoints=10.2.4.224:10.2.4.8 --cachefile=cmac.pcap.cache --infile=cmac.pcap --outfile=cip.pcap --skipbroadcast
+                         (ip_dst : ip Src)
+
+#replay file
+tcpreplay -i eth0 -tK --loop 1 -- cip.pcap
